@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pay The Bill</title>
+<style>
+#grad1 {
+    height: 540px;
+		width: 304px;
+    background: -webkit-linear-gradient(left top, grey , blue); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, grey, blue); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, grey, blue); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, grey , blue); /* Standard syntax (must be last) */
+}
+</style>
+</head>
+<body>
+
+<div id="grad1">
+<h1><font color="white">Calculate the Bill</font></h1>
+<font color="white">
+Easy "Split The Bill" App. Enter the Bill total and number of customers. Amend the service charge if you like.<br><br><hr><br>
+<table summary="">
+<tr><td>Total (ex Service)</td><td><input type = "number" id = "n1" value= /></td></tr>
+<tr><td>How many people?</td><td><input type = "number" id = "n2" value= /></td></tr>
+<tr><td>Service Charge (%)</td><td><input type = "number" id = "n3" value=10 /></td></tr>
+
+<table>
+<br><br>
+</hr>
+
+
+<button onclick="sum();sum2();sum3();sum4();sum5()">Calculate</button>
+</hr>
+<table>
+<tr><td>Total Bill exc Service</td><td><div id="res1"><div></td></tr>
+<tr><td>Total Bill inc Service</td><td><div id="res2"><div></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td>Cost Each exc Service</td><td><div id="res3"><div></td></tr>
+<tr><td>Cost Each inc Service</td><td><div id="res4"><div></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td></td><td></td></tr>
+<tr><td><h2>Total Each</h2></td><td><h2><div id="res5"><div></h2></td></tr>
+</table>
+
+
+
+<script type="text/javascript">
+ function sum() 
+{ 
+    var fn, ln, result; 
+    fn = parseInt(document.getElementById("n1").value, 10);
+    ln = parseInt(document.getElementById("n2").value, 10);
+    result =  (fn); 
+		result = result.toFixed(2);
+		var result2 = result.toString();
+		var result3 = "£".concat(result2);			
+    document.getElementById("res1").innerHTML = result3; 
+}
+ function sum2() 
+{ 
+    var fn, ln, result; 
+    fn = parseInt(document.getElementById("n1").value, 10);
+    ln = parseInt(document.getElementById("n3").value, 10);
+    result =  (fn+((fn*ln)/100)); 
+		result = result.toFixed(2);
+		var result2 = result.toString();
+		var result3 = "£".concat(result2);			
+    document.getElementById("res2").innerHTML = result3; 
+}
+ function sum3() 
+{ 
+    var fn, ln, result; 
+    fn = parseInt(document.getElementById("n1").value, 10);
+    ln = parseInt(document.getElementById("n2").value, 10);
+    result =  (fn/ln); 
+		result = result.toFixed(2);
+		var result2 = result.toString();
+		var result3 = "£".concat(result2);			
+    document.getElementById("res3").innerHTML = result3; 
+}
+ function sum4() 
+{ 
+    var fn, ln, result; 
+    fn = parseInt(document.getElementById("n1").value, 10);
+    ln = parseInt(document.getElementById("n2").value, 10);
+		fn2 = parseInt(document.getElementById("n3").value, 10);
+    result = ((fn+((fn*fn2)/100))/ln); 	
+	  result = result.toFixed(2);
+		var result2 = result.toString();
+		var result3 = "£".concat(result2);											
+    document.getElementById("res4").innerHTML = result3; 
+}
+ function sum5() 
+{ 
+    var fn, ln, result; 
+    fn = parseInt(document.getElementById("n1").value, 10);
+    ln = parseInt(document.getElementById("n2").value, 10);
+		fn2 = parseInt(document.getElementById("n3").value, 10);
+    result = ((fn+((fn*fn2)/100))/ln); 
+		result = result.toFixed(2);
+		var result2 = result.toString();
+		var result3 = "£".concat(result2);							
+    document.getElementById("res5").innerHTML = result3; 
+}
+</script>
+
+
+</font>
+</div>
+
+</body>
+</html>
